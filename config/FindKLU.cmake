@@ -3,8 +3,8 @@
 # ---------------------------------------------------------------
 # LLNS Copyright Start
 # Copyright (c) 2014, Lawrence Livermore National Security
-# This work was performed under the auspices of the U.S. Department 
-# of Energy by Lawrence Livermore National Laboratory in part under 
+# This work was performed under the auspices of the U.S. Department
+# of Energy by Lawrence Livermore National Laboratory in part under
 # Contract W-7405-Eng-48 and in part under Contract DE-AC52-07NA27344.
 # Produced at the Lawrence Livermore National Laboratory.
 # All rights reserved.
@@ -12,7 +12,7 @@
 # LLNS Copyright End
 # ---------------------------------------------------------------
 # Find KLU library.
-# 
+#
 
 # Set library prefixes for Windows
 if(WIN32)
@@ -25,14 +25,14 @@ if (temp_KLU_INCLUDE_DIR)
     set(KLU_INCLUDE_DIR ${temp_KLU_INCLUDE_DIR})
 endif()
 unset(temp_KLU_INCLUDE_DIR CACHE)
-    
+
 if (KLU_LIBRARY)
     # We have (or were given) KLU_LIBRARY - get path to use for other Suitesparse libs
     get_filename_component(KLU_LIBRARY_DIR ${KLU_LIBRARY} PATH)
 
     # force CACHE update to show user DIR that will be used
     set(KLU_LIBRARY_DIR ${KLU_LIBRARY_DIR} CACHE PATH "" FORCE)
-    
+
 else ()
     # find library with user provided directory path
     set(KLU_LIBRARY_NAME klu)

@@ -67,11 +67,11 @@ ENDIF()
 INCLUDE_DIRECTORIES(.)
 INCLUDE_DIRECTORIES(..)
 
-# Define C preprocessor flag -DBUILD_SUNDIALS_LIBRARY 
+# Define C preprocessor flag -DBUILD_SUNDIALS_LIBRARY
 ADD_DEFINITIONS(-DBUILD_SUNDIALS_LIBRARY)
 
-# Only build STATIC libraries (we cannot build shared libraries 
-# for the FCMIX interfaces due to unresolved symbol errors 
+# Only build STATIC libraries (we cannot build shared libraries
+# for the FCMIX interfaces due to unresolved symbol errors
 # coming from inexistent user-provided functions)
 
 # Add the build target for the FCVODE library

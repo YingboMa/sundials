@@ -592,7 +592,7 @@ void FARK_DLSMASSINIT(int *time_dep, int *ier) {
 
 /*=============================================================*/
 
-/* Fortran interface to C routine ARKSpilsSetLinearSolver; see 
+/* Fortran interface to C routine ARKSpilsSetLinearSolver; see
    farkode.h for further details */
 void FARK_SPILSINIT(int *ier) {
   if ( (ARK_arkodemem == NULL) || (F2C_ARKODE_linsol == NULL) ) {
@@ -605,15 +605,15 @@ void FARK_SPILSINIT(int *ier) {
   return;
 }
 
-/* Fortran interface to C routine ARKSpilsSetMassLinearSolver; see 
+/* Fortran interface to C routine ARKSpilsSetMassLinearSolver; see
    farkode.h for further details */
 void FARK_SPILSMASSINIT(int *time_dep, int *ier) {
   if ( (ARK_arkodemem == NULL) || (F2C_ARKODE_mass_sol == NULL) ) {
     *ier = -1;
     return;
   }
-  *ier = ARKSpilsSetMassLinearSolver(ARK_arkodemem, 
-                                     F2C_ARKODE_mass_sol, 
+  *ier = ARKSpilsSetMassLinearSolver(ARK_arkodemem,
+                                     F2C_ARKODE_mass_sol,
                                      *time_dep);
   FARKNullMatrix();
   ARK_mass_ls = ARK_LS_ITERATIVE;
@@ -678,7 +678,7 @@ void FARK_ARKODE(realtype *tout, realtype *t, realtype *y,
   ARKodeGetNonlinSolvStats(ARK_arkodemem,
                            &ARK_iout[10],   /* NNI     */
                            &ARK_iout[11]);  /* NCFN    */
-  
+
   /* If root finding is on, load those outputs as well */
   if (ARK_nrtfn != 0)
     ARKodeGetNumGEvals(ARK_arkodemem, &ARK_iout[12]);  /* NGE */
@@ -766,7 +766,7 @@ void FARK_GETERRWEIGHTS(realtype *eweight, int *ier) {
 
 /*=============================================================*/
 
-/* Fortran interface to C routine ARKodeGetResWeights; see 
+/* Fortran interface to C routine ARKodeGetResWeights; see
    farkode.h for further details */
 void FARK_GETRESWEIGHTS(realtype *rweight, int *ier) {
 
